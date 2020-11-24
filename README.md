@@ -13,7 +13,7 @@ Le but de ce projet est de créer un modèle qui prédit la durée de séjour de
 1.2 Description et analyse des données
 Le jeux de données utilisé et celui du https://microsoft.github.io/r-server-hospital-length-of-stay/input_data.html 
 
-![Data](Images/data_desc.png)
+![Data](data_desc.png)
       
 
 1.3 Métriques d'évaluation
