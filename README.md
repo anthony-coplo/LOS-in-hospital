@@ -3,7 +3,7 @@
 ## Objectif : Prédire la durée de séjour dans les hôpitaux.
 
 Le but de ce projet est d’offrir une durée de séjour prévue pour chaque patient (LOS - Length of stay) au moment de leur admission à l'hôpital.
-Les entrées du modèle de prédiction comprendront des caractéristique comme les diagnostics du patient (maladie cardiaque, accouchement, blessure, analyses sanguine, …), age, sex, etc
+Les entrées du modèle de prédiction comprendront des caractéristique comme les diagnostics du patient (maladie cardiaque, analyses sanguine, …), sex, etc
 
 
 1.1 Énoncé du problème
