@@ -9,89 +9,81 @@
   <body>
     <form action="{{ url_for('predict')}}"method="post">
 
-      <label for="rcount">number of readmissions within last 180 days:</label><br>
-      <input type="number" id="rcount" name="rcount"><br>
+      <label for="rcount">number of readmissions within last 180 days:</label>
+      <input type="number" min="0" id="rcount" name="rcount"><br>
 
-      <label for="gennder">gender:</label><br>
-      <input type="number" id="gender" name="gender">
+      <label for="gender">gender (0=H, 1=F):</label>
+      <input type="number" min="0" max="1" id="gender" name="gender"><br>
 
-      <label for="dialysisrenalendstage">renal disease during encounter:</label><br>
-      <input type="number" id="dialysisrenalendstage" name="dialysisrenalendstage">
+      <label for="dialysisrenalendstage">renal disease during encounter:</label>
+      <input type="number" min="0" max="1" id="dialysisrenalendstage" name="dialysisrenalendstage"><br>
 
-      <label for="asthma">asthma during encounter:</label><br>
-      <input type="number" id="asthma" name="asthma">
+      <label for="asthma">asthma during encounter:</label>
+      <input type="number" min="0" max="1" id="asthma" name="asthma"><br>
 
-      <label for="irondef">iron deficiency during encounter:</label><br>
-      <input type="number" id="irondef" name="irondef">
+      <label for="irondef">iron deficiency during encounter:</label>
+      <input type="number" min="0" max="1" id="irondef" name="irondef"><br>
 
-      <label for="pneum">pneumonia during encounter:</label><br>
-      <input type="number" id="pneum" name="pneum">
+      <label for="pneum">pneumonia during encounter:</label>
+      <input type="number" min="0" max="1" id="pneum" name="pneum"><br>
 
-      <label for="substancedependence">substance dependence during encounter:</label><br>
-      <input type="number" id="substancedependence" name="substancedependence">
+      <label for="substancedependence">substance dependence during encounter:</label>
+      <input type="number" min="0" max="1" id="substancedependence" name="substancedependence"><br>
 
-      <label for="psychologicaldisordermajor">major psychological disorder during encounter:</label><br>
-      <input type="number" id="psychologicaldisordermajor" name="psychologicaldisordermajor">
+      <label for="psychologicaldisordermajor">major psychological disorder during encounter:</label>
+      <input type="number" min="0" max="1" id="psychologicaldisordermajor" name="psychologicaldisordermajor"><br>
 
-      <label for="depress">depression during encounter:</label><br>
-      <input type="number" id="depress" name="depress">
+      <label for="depress">depression during encounter:</label>
+      <input type="number" min="0" max="1" id="depress" name="depress"><br>
 
-      <label for="psychother">other psychother disorder during encounter:</label><br>
-      <input type="number" id="psychother" name="psychother">
+      <label for="psychother">other psychother disorder during encounter:</label>
+      <input type="number" min="0" max="1" id="psychother" name="psychother"><br>
 
-      <label for="fibrosisandother">fibrosis during encounter:</label><br>
-      <input type="number" id="fibrosisandother" name="fibrosisandother">
+      <label for="fibrosisandother">fibrosis during encounter:</label>
+      <input type="number" min="0" max="1" id="fibrosisandother" name="fibrosisandother"><br>
 
-      <label for="malnutrition">malnutrition during encounter:</label><br>
-      <input type="number" id="malnutrition" name="malnutrition">
+      <label for="malnutrition">malnutrition during encounter:</label>
+      <input type="number" min="0" max="1" id="malnutrition" name="malnutrition"><br>
 
-      <label for="hemo">blood disorder during encounter:</label><br>
-      <input type="number" id="hemo" name="hemo">
+      <label for="hemo">blood disorder during encounter (hemo):</label>
+      <input type="number" min="0" max="1" id="hemo" name="hemo"><br>
 
-      <label for="hematocrit">average hematocrit value during encounter (g/dL):</label><br>
-      <input type="number" id="hematocrit" name="hematocrit">
+      <label for="hematocrit">average hematocrit value during encounter (g/dL):</label>
+      <input type="text"  min="0" id="hematocrit" name="hematocrit"><br>
 
-      <label for="hematocrit">average hematocrit value during encounter (g/dL):</label><br>
-      <input type="number" id="hematocrit" name="hematocrit">
+      <label for="neutrophils">Average neutrophils value during encounter (cells/microL):</label>
+      <input type="text"  min="0" id="neutrophils" name="neutrophils"><br>
 
-      <label for="neutrophils">Average neutrophils value during encounter (cells/microL):</label><br>
-      <input type="number" id="neutrophils" name="neutrophils">
+      <label for="sodium">average sodium value during encounter (mmol/L):</label>
+      <input type="text"  min="0" id="sodium" name="sodium"><br>
 
-      <label for="sodium">average sodium value during encounter (mmol/L):</label><br>
-      <input type="number" id="sodium" name="sodium">
+      <label for="glucose">average glucose value during encounter (mmol/L):</label>
+      <input type="text"  min="0" id="glucose" name="glucose"><br>
 
-      <label for="glucose">average glucose value during encounter (mmol/L):</label><br>
-      <input type="number" id="glucose" name="glucose">
+      <label for="bloodureanitro">average blood area nitrogen value during encounter (mg/dL):</label>
+      <input type="text"  min="0" id="bloodureanitro" name="bloodureanitro"><br>
 
-      <label for="bloodureanitro">average blood area nitrogen value during encounter (mg/dL):</label><br>
-      <input type="number" id="bloodureanitro" name="bloodureanitro">
+      <label for="creatinine">average creatinine value during encounter (mg/dL):</label>
+      <input type="text"  min="0" id="creatinine" name="creatinine"><br>
 
-      <label for="creatinine">average creatinine value during encounter (mg/dL):</label><br>
-      <input type="number" id="creatinine" name="creatinine">
+      <label for="bmi">average bmi during encounter (kg/m2):</label>
+      <input type="text" min="0" d="bmi" name="bmi"><br>
 
-      <label for="glucose">average glucose value during encounter (mmol/L):</label><br>
-      <input type="number" id="glucose" name="glucose">
+      <label for="pulse">average pulse during encounter (beats/m):</label>
+      <input type="text"  min="0" id="pulse" name="pulse"><br>
 
-      <label for="bmi">average bmi during encounter (kg/m2):</label><br>
-      <input type="number" id="bmi" name="bmi">
+      <label for="respiration">average respiration during encounter (breaths/m):</label>
+      <input type="text"  min="0" id="respiration" name="respiration"><br>
 
-      <label for="pulse">average pulse during encounter (beats/m):</label><br>
-      <input type="number" id="bmi" name="bmi">
+      <label for="secondarydiagnosisnonicd9">Flag for whether a non ICD 9 formatted diagnosis was coded as a secondary diagnosis :</label>
+      <input type="number" min="0" id="secondarydiagnosisnonicd9" name="secondarydiagnosisnonicd9"><br>
 
-      <label for="bmi">average bmiduring encounter (kg/m2):</label><br>
-      <input type="number" id="bmi" name="bmi">
+      <label for="facid"> facility ID:</label>
+      <input type="number" min="0" max="4" id="facid" name="facid"><br>
 
-      <label for="respiration">average respiration during encounter (breaths/m):</label><br>
-      <input type="number" id="respiration" name="respiration">
-
-      <label for="secondarydiagnosisnonicd9">Flag for whether a non ICD 9 formatted diagnosis was coded as a secondary diagnosis :</label><br>
-      <input type="number" id="secondarydiagnosisnonicd9" name="secondarydiagnosisnonicd9">
-
-      <label for="facid">Flag for whether a non ICD 9 formatted diagnosis was coded as a secondary diagnosis :</label><br>
-      <input type="number" id="facid" name="facid">
-
-      <label for="daysofweek_admit">days of week admited :</label><br>
-      <input type="number" id="daysofweek_admit" name="daysofweek_admit">
+      <label for="daysofweek_admit">days of week admited (0 = lundi; 6 = dimanche):</label>
+      <input type="number" min="0" max="6" id="daysofweek_admit" name="daysofweek_admit"><br>
+      <br>
 
       <button type="submit" class="btn btn-primary btn-block btn-large">Evaluer le LOS</button>
 
