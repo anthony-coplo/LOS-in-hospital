@@ -4,88 +4,115 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <title>LOS application</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/style.css') }}">
+    <link href="{{ url_for('static',filename='/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
+
+
   <body>
+  
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+  
+        <h1 class="logo mr-auto"><a href="/">Medialab</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+  
+  
+      </div>
+    </header><!-- End Header -->
     <form action="{{ url_for('predict')}}"method="post">
+      <div class="container">
+        <div class="row rowlosapplication">
+          <div class=" col">
+      <label for="rcount">Number of readmissions within last 180 days :</label>
+      <input type="number" min="0" id="rcount" name="rcount">
 
-      <label for="rcount">number of readmissions within last 180 days:</label>
-      <input type="number" min="0" id="rcount" name="rcount"><br>
+      <label for="gender">Gender (0=H, 1=F) :</label>
+      <input type="number" min="0" max="1" id="gender" name="gender">
 
-      <label for="gender">gender (0=H, 1=F):</label>
-      <input type="number" min="0" max="1" id="gender" name="gender"><br>
+      <label for="dialysisrenalendstage">Renal disease during encounter :</label>
+      <input type="number" min="0" max="1" id="dialysisrenalendstage" name="dialysisrenalendstage">
 
-      <label for="dialysisrenalendstage">renal disease during encounter:</label>
-      <input type="number" min="0" max="1" id="dialysisrenalendstage" name="dialysisrenalendstage"><br>
+      <label for="asthma">Asthma during encounter :</label>
+      <input type="number" min="0" max="1" id="asthma" name="asthma">
 
-      <label for="asthma">asthma during encounter:</label>
-      <input type="number" min="0" max="1" id="asthma" name="asthma"><br>
+      <label for="irondef">Iron deficiency during encounter :</label>
+      <input type="number" min="0" max="1" id="irondef" name="irondef">
 
-      <label for="irondef">iron deficiency during encounter:</label>
-      <input type="number" min="0" max="1" id="irondef" name="irondef"><br>
+      <label for="pneum">Pneumonia during encounter :</label>
+      <input type="number" min="0" max="1" id="pneum" name="pneum">
 
-      <label for="pneum">pneumonia during encounter:</label>
-      <input type="number" min="0" max="1" id="pneum" name="pneum"><br>
+      <label for="substancedependence">Substance dependence during encounter :</label>
+      <input type="number" min="0" max="1" id="substancedependence" name="substancedependence">
 
-      <label for="substancedependence">substance dependence during encounter:</label>
-      <input type="number" min="0" max="1" id="substancedependence" name="substancedependence"><br>
+      <label for="psychologicaldisordermajor">Major psychological disorder during encounter :</label>
+      <input type="number" min="0" max="1" id="psychologicaldisordermajor" name="psychologicaldisordermajor">
 
-      <label for="psychologicaldisordermajor">major psychological disorder during encounter:</label>
-      <input type="number" min="0" max="1" id="psychologicaldisordermajor" name="psychologicaldisordermajor"><br>
+      <label for="depress">Depression during encounter :</label>
+      <input type="number" min="0" max="1" id="depress" name="depress">
 
-      <label for="depress">depression during encounter:</label>
-      <input type="number" min="0" max="1" id="depress" name="depress"><br>
+      <label for="psychother">Other psychother disorder during encounter :</label>
+      <input type="number" min="0" max="1" id="psychother" name="psychother">
 
-      <label for="psychother">other psychother disorder during encounter:</label>
-      <input type="number" min="0" max="1" id="psychother" name="psychother"><br>
+      <label for="fibrosisandother">Fibrosis during encounter :</label>
+      <input type="number" min="0" max="1" id="fibrosisandother" name="fibrosisandother">
 
-      <label for="fibrosisandother">fibrosis during encounter:</label>
-      <input type="number" min="0" max="1" id="fibrosisandother" name="fibrosisandother"><br>
+      <label for="malnutrition">Malnutrition during encounter :</label>
+      <input type="number" min="0" max="1" id="malnutrition" name="malnutrition">
 
-      <label for="malnutrition">malnutrition during encounter:</label>
-      <input type="number" min="0" max="1" id="malnutrition" name="malnutrition"><br>
+      <label for="hemo">Blood disorder during encounter (hemo) :</label>
+      <input type="number" min="0" max="1" id="hemo" name="hemo">
+    </div>
+    <div class="col">
+      <label for="hematocrit">Average hematocrit value during encounter (g/dL) :</label>
+      <input type="text"  min="0" id="hematocrit" name="hematocrit">
 
-      <label for="hemo">blood disorder during encounter (hemo):</label>
-      <input type="number" min="0" max="1" id="hemo" name="hemo"><br>
+      <label for="neutrophils">Average neutrophils value during encounter (cells/microL) :</label>
+      <input type="text"  min="0" id="neutrophils" name="neutrophils">
 
-      <label for="hematocrit">average hematocrit value during encounter (g/dL):</label>
-      <input type="text"  min="0" id="hematocrit" name="hematocrit"><br>
+      <label for="sodium">Average sodium value during encounter (mmol/L) :</label>
+      <input type="text"  min="0" id="sodium" name="sodium">
 
-      <label for="neutrophils">Average neutrophils value during encounter (cells/microL):</label>
-      <input type="text"  min="0" id="neutrophils" name="neutrophils"><br>
+      <label for="glucose">Average glucose value during encounter (mmol/L) :</label>
+      <input type="text"  min="0" id="glucose" name="glucose">
 
-      <label for="sodium">average sodium value during encounter (mmol/L):</label>
-      <input type="text"  min="0" id="sodium" name="sodium"><br>
+      <label for="bloodureanitro">Average blood area nitrogen value during encounter (mg/dL) :</label>
+      <input type="text"  min="0" id="bloodureanitro" name="bloodureanitro">
 
-      <label for="glucose">average glucose value during encounter (mmol/L):</label>
-      <input type="text"  min="0" id="glucose" name="glucose"><br>
+      <label for="creatinine">Average creatinine value during encounter (mg/dL) :</label>
+      <input type="text"  min="0" id="creatinine" name="creatinine">
 
-      <label for="bloodureanitro">average blood area nitrogen value during encounter (mg/dL):</label>
-      <input type="text"  min="0" id="bloodureanitro" name="bloodureanitro"><br>
+      <label for="bmi">Average bmi during encounter (kg/m2) :</label>
+      <input type="text" min="0" id="bmi" name="bmi">
 
-      <label for="creatinine">average creatinine value during encounter (mg/dL):</label>
-      <input type="text"  min="0" id="creatinine" name="creatinine"><br>
+      <label for="pulse">Average pulse during encounter (beats/m) :</label>
+      <input type="text"  min="0" id="pulse" name="pulse">
 
-      <label for="bmi">average bmi during encounter (kg/m2):</label>
-      <input type="text" min="0" d="bmi" name="bmi"><br>
-
-      <label for="pulse">average pulse during encounter (beats/m):</label>
-      <input type="text"  min="0" id="pulse" name="pulse"><br>
-
-      <label for="respiration">average respiration during encounter (breaths/m):</label>
-      <input type="text"  min="0" id="respiration" name="respiration"><br>
+      <label for="respiration">Average respiration during encounter (breaths/m) :</label>
+      <input type="text"  min="0" id="respiration" name="respiration">
 
       <label for="secondarydiagnosisnonicd9">Flag for whether a non ICD 9 formatted diagnosis was coded as a secondary diagnosis :</label>
-      <input type="number" min="0" id="secondarydiagnosisnonicd9" name="secondarydiagnosisnonicd9"><br>
+      <input type="number" min="0" id="secondarydiagnosisnonicd9" name="secondarydiagnosisnonicd9">
 
-      <label for="facid"> facility ID:</label>
-      <input type="number" min="0" max="4" id="facid" name="facid"><br>
+      <label for="facid">Facility ID :</label>
+      <input type="number" min="0" max="4" id="facid" name="facid">
 
-      <label for="daysofweek_admit">days of week admited (0 = lundi; 6 = dimanche):</label>
-      <input type="number" min="0" max="6" id="daysofweek_admit" name="daysofweek_admit"><br>
-      <br>
+      <label for="daysofweek_admit">Days of week admited (0 = lundi; 6 = dimanche) :</label>
+      <input type="number" min="0" max="6" id="daysofweek_admit" name="daysofweek_admit">
+      
 
-      <button type="submit" class="btn btn-primary btn-block btn-large">Evaluer le LOS</button>
+    </div>
+
+  </div>
+  <button type="submit" class="btn btn-primary btn-block btn-large">Evaluer le LOS</button>
 
     </form>
   </body>

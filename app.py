@@ -7,6 +7,8 @@ import pickle
 app = Flask(__name__)
 port = int(os.getenv('PORT', '3000'))
 
+app = Flask(__name__, template_folder='templates', static_folder='templates/assets/css')
+
 @app.route('/', methods=['GET','POST'])
 def home():
     return render_template('index.html')
@@ -69,8 +71,7 @@ def predict():
 
     #return la prediction
     pred = str(prediction.item())
-    return pred
-
+    return render_template("pred.html", text=pred)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port, debug=True)
