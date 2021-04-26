@@ -1,5 +1,7 @@
 # LOS-in-hospital
 
+Donwload the pre trained model : https://drive.google.com/file/d/1xaQQ1QC-o2w8Z7YNCz1l7cOqbe6mUGNn/view?usp=sharing
+
 ## Objectif : Prédire la durée de séjour dans les hôpitaux.
 
 Le but de ce projet est d’offrir une durée de séjour prévue pour chaque patient (LOS - Length of stay) au moment de leur admission à l'hôpital.
